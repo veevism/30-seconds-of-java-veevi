@@ -32,7 +32,7 @@ import org.junit.jupiter.api.Test;
 /**
   * Tests for 30 Seconds of Java code library.
   */
-public class CycleSortSnippetTest {
+class CycleSortSnippetTest {
   /**
     * Test for {@link CycleSortSnippet#cycleSort(int[])}.
     */

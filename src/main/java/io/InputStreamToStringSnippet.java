@@ -29,10 +29,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * InputStreamToStringSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class InputStreamToStringSnippet {
 
   /**
@@ -43,6 +46,6 @@ public class InputStreamToStringSnippet {
    */
   public static String inputStreamToString(InputStream inputStream) {
     return new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))
-            .lines().collect(Collectors.joining(System.lineSeparator()));
+        .lines().collect(Collectors.joining(System.lineSeparator()));
   }
 }

@@ -24,18 +24,22 @@
 
 package algorithm;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * BinarySearchSnippet.
  */
-
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class BinarySearchSnippet {
 
   /**
    * Search an item with binarySearch algorithm.
    *
-   * @param arr sorted array to search
+   * @param arr  sorted array to search
    * @param item an item to search
-   * @return if item is found, return the index position of the array item otherwise return -1
+   * @return if item is found, return the index position of the array item
+   *         otherwise return -1
    */
 
   public static int binarySearch(int[] arr, int left, int right, int item) {
@@ -53,5 +57,5 @@ public class BinarySearchSnippet {
     }
     return -1;
   }
-    
+
 }

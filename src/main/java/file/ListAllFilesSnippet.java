@@ -27,10 +27,13 @@ package file;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * ListAllFilesSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ListAllFilesSnippet {
 
   /**
@@ -42,7 +45,7 @@ public class ListAllFilesSnippet {
   public static List<File> listAllFiles(String path) {
     var all = new ArrayList<File>();
     var list = new File(path).listFiles();
-    if (list != null) {  // In case of access error, list is null
+    if (list != null) { // In case of access error, list is null
       for (var f : list) {
         if (f.isDirectory()) {
           all.addAll(listAllFiles(f.getAbsolutePath()));

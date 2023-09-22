@@ -25,14 +25,18 @@
 package string;
 
 import java.util.Arrays;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * AnagramSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AnagramSnippet {
 
   /**
-   * Checks if two words are anagrams (contains same characters with same frequency in any order).
+   * Checks if two words are anagrams (contains same characters with same
+   * frequency in any order).
    *
    * @param s1 The first string to be checked
    * @param s2 The second string to be checked

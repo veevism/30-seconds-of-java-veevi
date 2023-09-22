@@ -24,20 +24,25 @@
 
 package math;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * HaversineFormulaSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class HaversineFormulaSnippet {
 
   // Radius of sphere on which the points are, in this case Earth.
   private static final double SPHERE_RADIUS_IN_KM = 6372.8;
 
   /**
-   * Haversine formula for calculating distance between two latitude, longitude points.
+   * Haversine formula for calculating distance between two latitude, longitude
+   * points.
    *
-   * @param latA Latitude of point A
+   * @param latA  Latitude of point A
    * @param longA Longitude of point A
-   * @param latB Latitude of point B
+   * @param latB  Latitude of point B
    * @param longB Longitude of point B
    * @return the distance between the two points.
    */
@@ -58,7 +63,7 @@ public class HaversineFormulaSnippet {
 
     // Calculating the distance as per haversine formula
     var a = Math.pow(Math.sin(latitudeDiff / 2), 2)
-            + Math.pow(Math.sin(longitudeDiff / 2), 2) * Math.cos(latitudeA) * Math.cos(latitudeB);
+        + Math.pow(Math.sin(longitudeDiff / 2), 2) * Math.cos(latitudeA) * Math.cos(latitudeB);
     var c = 2 * Math.asin(Math.sqrt(a));
     return SPHERE_RADIUS_IN_KM * c;
   }

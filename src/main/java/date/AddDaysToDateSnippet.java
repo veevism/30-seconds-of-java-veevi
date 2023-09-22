@@ -25,19 +25,21 @@
 package date;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * AddDaysToDateSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AddDaysToDateSnippet {
 
   /**
    * Add days to given date.
    *
-   * @param date given date
+   * @param date     given date
    * @param noOfDays number of days to add
    * @return modified date
    */
@@ -54,7 +56,7 @@ public class AddDaysToDateSnippet {
   /**
    * Add days to local date.
    *
-   * @param date given local date
+   * @param date     given local date
    * @param noOfDays number of days to add
    * @return modified date
    */

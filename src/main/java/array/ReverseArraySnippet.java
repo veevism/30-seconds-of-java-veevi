@@ -24,27 +24,32 @@
 
 package array;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * ReverseArraySnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ReverseArraySnippet {
 
   /**
-   * The function then reverses the elements of the array between the starting and ending
-   * indices using a while loop and a temporary variable `temp`. Finally, the function returns
+   * The function then reverses the elements of the array between the starting and
+   * ending
+   * indices using a while loop and a temporary variable `temp`. Finally, the
+   * function returns
    * the reversed array.
    *
    * @param array a array
    * @param start start index array
-   * @param end end index array
+   * @param end   end index array
    * @return reverses elements in the array
    * @throws IllegalArgumentException if the [start] index is greater
-   *         than the [end] index or if the array is null
+   *                                  than the [end] index or if the array is null
    **/
   public static <T> T[] reverseArray(T[] array, int start, int end) {
     if (start > end || array == null) {
-      throw new
-              IllegalArgumentException("Invalid argument!");
+      throw new IllegalArgumentException("Invalid argument!");
     }
     int minimumSizeArrayForReversal = 2;
     if (start == end || array.length < minimumSizeArrayForReversal) {

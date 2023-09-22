@@ -24,9 +24,13 @@
 
 package math;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * FactorialSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FactorialSnippet {
 
   /**

@@ -31,17 +31,22 @@ import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * CaptureScreenSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CaptureScreenSnippet {
 
   /**
-   * Capture screenshot and save it to PNG file. Credits: https://viralpatel.net/blogs/how-to-take-screen-shots-in-java-taking-screenshots-java/
+   * Capture screenshot and save it to PNG file. Credits:
+   * https://viralpatel.net/blogs/how-to-take-screen-shots-in-java-taking-screenshots-java/
    *
    * @param filename the name of the file
-   * @throws AWTException if the platform configuration does not allow low-level input control
+   * @throws AWTException if the platform configuration does not allow low-level
+   *                      input control
    * @throws IOException  if an I/O error occurs
    */
   public static void captureScreen(String filename) throws AWTException, IOException {

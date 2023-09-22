@@ -24,13 +24,18 @@
 
 package string;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * LevenshteinDistanceSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LevenshteinDistanceSnippet {
 
   /**
-   * Find the Levenshtein distance between two words. https://en.wikipedia.org/wiki/Levenshtein_distance
+   * Find the Levenshtein distance between two words.
+   * https://en.wikipedia.org/wiki/Levenshtein_distance
    *
    * @param word1 first word
    * @param word2 second word

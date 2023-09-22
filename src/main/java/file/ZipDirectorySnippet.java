@@ -30,38 +30,41 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * ZipDirectorySnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ZipDirectorySnippet {
 
   /**
    * Zip a complete directory.
    *
    * @param srcDirectoryName The path to the directory to be zipped
-   * @param zipFileName The location and name of the zipped file.
+   * @param zipFileName      The location and name of the zipped file.
    * @throws IOException if an I/O error occurs
-   * */
+   */
   public static void zipDirectory(String srcDirectoryName, String zipFileName) throws IOException {
     var srcDirectory = new File(srcDirectoryName);
     try (
         var fileOut = new FileOutputStream(zipFileName);
-        var zipOut = new ZipOutputStream(fileOut)
-    ) {
+        var zipOut = new ZipOutputStream(fileOut)) {
       zipFile(srcDirectory, srcDirectory.getName(), zipOut);
     }
   }
 
   /**
-   * Utility function which either zips a single file, or recursively calls itself for 
+   * Utility function which either zips a single file, or recursively calls itself
+   * for
    * a directory to traverse down to the files contained within it.
    *
    * @param fileToZip The file as a resource
-   * @param fileName The actual name of the file
-   * @param zipOut The output stream to which all data is being written
-   * */
-  public static void zipFile(File fileToZip, String fileName, ZipOutputStream zipOut) 
+   * @param fileName  The actual name of the file
+   * @param zipOut    The output stream to which all data is being written
+   */
+  public static void zipFile(File fileToZip, String fileName, ZipOutputStream zipOut)
       throws IOException {
     if (fileToZip.isHidden()) { // Ignore hidden files as standard
       return;
@@ -71,7 +74,8 @@ public class ZipDirectorySnippet {
         zipOut.putNextEntry(new ZipEntry(fileName)); // To be zipped next
         zipOut.closeEntry();
       } else {
-        // Add the "/" mark explicitly to preserve structure while unzipping action is performed
+        // Add the "/" mark explicitly to preserve structure while unzipping action is
+        // performed
         zipOut.putNextEntry(new ZipEntry(fileName + "/"));
         zipOut.closeEntry();
       }

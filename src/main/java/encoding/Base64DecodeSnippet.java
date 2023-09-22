@@ -25,10 +25,13 @@
 package encoding;
 
 import java.util.Base64;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * Base64DecodeSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Base64DecodeSnippet {
 
   /**

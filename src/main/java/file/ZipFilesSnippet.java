@@ -30,10 +30,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * ZipFilesSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ZipFilesSnippet {
 
   /**
@@ -45,9 +48,8 @@ public class ZipFilesSnippet {
    */
   public static void zipFiles(String[] srcFilenames, String zipFilename) throws IOException {
     try (
-            var fileOut = new FileOutputStream(zipFilename);
-            var zipOut = new ZipOutputStream(fileOut)
-    ) {
+        var fileOut = new FileOutputStream(zipFilename);
+        var zipOut = new ZipOutputStream(fileOut)) {
       for (String srcFilename : srcFilenames) {
         var srcFile = new File(srcFilename);
         try (var fileIn = new FileInputStream(srcFile)) {

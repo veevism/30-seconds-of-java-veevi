@@ -24,9 +24,13 @@
 
 package algorithm;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * QuickSortSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class QuickSortSnippet {
 
   /**

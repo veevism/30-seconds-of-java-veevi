@@ -27,10 +27,13 @@ package string;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * StringToDateSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class StringToDateSnippet {
 
   /**

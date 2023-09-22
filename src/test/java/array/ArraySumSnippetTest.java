@@ -31,7 +31,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Tests for 30 Seconds of Java code library.
  */
-public class ArraySumSnippetTest {
+class ArraySumSnippetTest {
   /**
    * Tests for {@link ArraySumSnippet#arraySum(int[])}.
    */

@@ -25,20 +25,22 @@
 package array;
 
 import java.util.Arrays;
- 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
-  * FindMinSnippet.
-  */
+ * FindMinSnippet.
+ */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FindMinSnippet {
- 
+
   /**
-    * Returns the minimum integer from the array using reduction.
-    *
-    * @param arr the array of integers (not null)
-    * @return the minimum element from the array
-    */
+   * Returns the minimum integer from the array using reduction.
+   *
+   * @param arr the array of integers (not null)
+   * @return the minimum element from the array
+   */
   public static int findMin(int[] arr) {
     return Arrays.stream(arr).reduce(Integer.MAX_VALUE, Integer::min);
   }
 }
- 

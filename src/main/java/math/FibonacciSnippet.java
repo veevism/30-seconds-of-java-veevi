@@ -26,14 +26,18 @@ package math;
 
 import java.util.ArrayList;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * FibonacciSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FibonacciSnippet {
 
   /**
-   * Recursive Fibonacci series. Works only for small n and is spectacularly inefficient
+   * Recursive Fibonacci series. Works only for small n and is spectacularly
+   * inefficient
    *
    * @param n given number
    * @return fibonacci number for given n

@@ -26,15 +26,21 @@ package thread;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * ThreadPool.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ThreadPool {
 
   /**
-   * <p>Creates pool of threads. Where the pool is the size of the number of processors
-   * available to the Java virtual machine.</p>
+   * <p>
+   * Creates pool of threads. Where the pool is the size of the number of
+   * processors
+   * available to the Java virtual machine.
+   * </p>
    *
    * @return the newly created thread pool
    */

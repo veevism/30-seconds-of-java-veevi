@@ -24,21 +24,30 @@
 
 package math;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * LuhnSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LuhnSnippet {
 
   /**
-   * Calculates checksum for a given number with Luhn's algorithm. Works only on non-negative
-   * integers not greater than {@link Long#MAX_VALUE} i.e., all numbers with a maximum of 18
-   * digits, plus 19-digit-long numbers start with 1..8 (also some with 9, too). For
+   * Calculates checksum for a given number with Luhn's algorithm. Works only on
+   * non-negative
+   * integers not greater than {@link Long#MAX_VALUE} i.e., all numbers with a
+   * maximum of 18
+   * digits, plus 19-digit-long numbers start with 1..8 (also some with 9, too).
+   * For
    * demonstration purposes, algorithm is not optimized for efficiency.
    *
    * @param num number whose checksum is to be calculated
    * @return checksum value for num
-   * @see <a href="https://patents.google.com/patent/US2950048A">Hans P. LUHN's patent US2950048A</a>
-   * @see <a href="https://en.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm on Wikipedia</a>
+   * @see <a href="https://patents.google.com/patent/US2950048A">Hans P. LUHN's
+   *      patent US2950048A</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm on
+   *      Wikipedia</a>
    */
   public static int calculateLuhnChecksum(long num) {
     if (num < 0) {
@@ -59,9 +68,9 @@ public class LuhnSnippet {
 
       isOddPosition = !isOddPosition;
     }
-    final var checksumDigit = (10 - (sum % 10)) % 10;
+
     // Outermost modulus handles edge case `num = 0`.
-    return checksumDigit;
+    return (10 - (sum % 10)) % 10;
   }
 
 }

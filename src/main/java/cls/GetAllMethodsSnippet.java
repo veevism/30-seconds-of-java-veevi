@@ -27,11 +27,13 @@ package cls;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * GetAllMethodsSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class GetAllMethodsSnippet {
 
   /**
@@ -42,7 +44,6 @@ public class GetAllMethodsSnippet {
    */
   public static List<String> getAllMethods(final Class<?> cls) {
     return Arrays.stream(cls.getDeclaredMethods())
-        .map(Method::getName)
-        .collect(Collectors.toList());
+        .map(Method::getName).toList();
   }
 }

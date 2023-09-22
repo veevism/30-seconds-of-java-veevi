@@ -24,14 +24,20 @@
 
 package math;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * PrimeNumberSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PrimeNumberSnippet {
 
   /**
-   * Checks if given number is a prime number. Prime number is a number that is greater than 1 and
-   * divided by 1 or itself only Credits: https://en.wikipedia.org/wiki/Prime_number
+   * Checks if given number is a prime number. Prime number is a number that is
+   * greater than 1 and
+   * divided by 1 or itself only Credits:
+   * https://en.wikipedia.org/wiki/Prime_number
    *
    * @param number number to check prime
    * @return true if prime

@@ -26,10 +26,13 @@ package math;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * PerformLotterySnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PerformLotterySnippet {
 
   /**

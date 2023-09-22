@@ -25,14 +25,18 @@
 package array;
 
 import java.util.Arrays;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /**
  * ArrayConcatSnippet.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ArrayConcatSnippet {
 
   /**
-   * Generic 2 array concatenation Credits: Joachim Sauer https://stackoverflow.com/questions/80476/how-can-i-concatenate-two-arrays-in-java
+   * Generic 2 array concatenation Credits: Joachim Sauer
+   * https://stackoverflow.com/questions/80476/how-can-i-concatenate-two-arrays-in-java
    *
    * @param first  is the first array (not null)
    * @param second is the second array (not null)
